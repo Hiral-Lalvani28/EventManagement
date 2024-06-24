@@ -1,0 +1,20 @@
+<div class="detail-wrapper">
+  <h2>Event Details</h2>
+  @if(event){
+  <div>
+    <p><strong>Title:</strong> {{ event[0].title }}</p>
+    <p><strong>Date:</strong> {{ (event[0].date.toISOString()).split("T", 1)[0] }}</p>
+    <p><strong>Location:</strong> {{ event[0].location }}</p>
+    <p><strong>Description:</strong> {{ event[0].description }}</p>
+  </div>
+  }
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="goBackToList()"
+    class="backbtn"
+  >
+    Back to Event List
+  </button>
+</div>

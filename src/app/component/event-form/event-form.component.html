@@ -1,0 +1,55 @@
+<div class="form-wrapper">
+  <form [formGroup]="eventForm" (ngSubmit)="onSubmit()" class="example-form">
+    <h2>{{ eventIds ? "Edit Event" : "Add Event" }}</h2>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" placeholder="Enter title" />
+      <!-- <mat-error *ngIf="eventForm.get('title').invalid && (eventForm.get('title').dirty || eventForm.get('title').touched)">
+        Title is required
+      </mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="date"
+        placeholder="Choose a date"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <!-- <mat-error *ngIf="eventForm.get('date').invalid && (eventForm.get('date').dirty || eventForm.get('date').touched)">
+        Date is required
+      </mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Location</mat-label>
+      <input matInput formControlName="location" placeholder="Enter location" />
+      <!-- <mat-error *ngIf="eventForm.get('location').invalid && (eventForm.get('location').dirty || eventForm.get('location').touched)">
+        Location is required
+      </mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        formControlName="description"
+        placeholder="Enter description"
+      ></textarea>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="eventForm.invalid"
+      class="submit-btn"
+    >
+      Submit
+    </button>
+  </form>
+</div>

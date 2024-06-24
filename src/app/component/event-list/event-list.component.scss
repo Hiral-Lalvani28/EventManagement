@@ -1,0 +1,28 @@
+.addbtn {
+    border-radius: 5px;
+    background-color: #005cbb;
+    color: #ffff;
+    outline: none;
+    padding: .5rem;
+    border: none;
+}
+
+.list-wrapper {
+    padding: 2rem;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-wrapper {
+    width: 100%;
+    overflow: auto;
+}
+.mat-column-description{
+    max-width: 100px !important;
+    min-width: 100px !important;
+    text-overflow: ellipsis;
+  white-space: nowrap;
+ }
